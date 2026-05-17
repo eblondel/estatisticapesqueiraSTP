@@ -1,5 +1,6 @@
 
 opa <- function(){
+  library(estatisticapesqueiraSTP)
   conf <- get_config_from_local()
   artfish <- list(
     dat = readxl::read_excel(path = file.path("inst", "config", "artfish.xlsx"), sheet = "dat"),
@@ -12,7 +13,7 @@ opa <- function(){
   variables = conf$variables
   repository_name = conf$repository_name
   zenodo = conf$zenodo
-  token = "zNSDin2zDRF3Rop7Yg0Qp5KzZ4VwCD2r8zfHbqNsRHsf6u66Kfkx1yAbCTl9"
+  load_data_from = "server"
 
   export_artfish(config = config,
                  last_session = last_session,
@@ -252,7 +253,9 @@ export_artfish <- function(
             if(nrow(temp) > 0) pos = which(temp$date == max(temp$date))
             if(length(pos) == 1) FEN = temp$fleet_engagement_number[pos]
             return(if(is.null(FEN)) NA else FEN)
-          }
+          } else {
+            return(FEN)
+            }
         }
       )
     )
