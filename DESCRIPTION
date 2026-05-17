@@ -1,6 +1,6 @@
 Package: estatisticapesqueiraSTP
 Title: Management of STP's statistical data
-Version: 0.0.0.9000
+Version: 0.0.10
 Authors@R: 
     person("Guillermo", "Porriños", email = "grmo.prieto@outlook.com", role = c("aut", "cre"))
 Description: So many incredible things
