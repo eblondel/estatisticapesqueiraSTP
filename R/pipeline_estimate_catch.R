@@ -498,6 +498,7 @@ export_artfish <- function(
     if(any(is.infinite(catch_and_effort_report[,colname]))) catch_and_effort_report[is.infinite(catch_and_effort_report[,colname]),][,colname] <- 0
   }
   catch_and_effort_report$species_label = catch_and_effort_report$species
+  catch_and_effort_report$species_scientific = catch_and_effort_report$species
   catch_and_effort_report$fishing_unit_label = catch_and_effort_report$fishing_unit
   catch_and_effort_report$date = lubridate::make_date(catch_and_effort_report$year, catch_and_effort_report$month, 1)
 
